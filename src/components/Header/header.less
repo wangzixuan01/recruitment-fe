@@ -14,6 +14,13 @@
                 float: left;
                 line-height: 15px;
             };
+            .location{
+                color: #08d7a2;
+                padding: 0 12px 0 27px;
+                margin: 7px 0 0;
+                float: left;
+                line-height: 15px;
+            }
             .os{
                 border-left: 1px solid #5d5d5d;
                 color: #c4c3c3;
@@ -31,22 +38,20 @@
             li{
                 position: relative;
                 float: left;
-                display: list-item;
-                text-align: -webkit-match-parent;
+                height: 30px;
                 .os{
+                    position: relative;
                     color: #c4c3c3;
                     float: left;
                     line-height: 15px;
                     padding: 0 12px;
                     margin: 7px 0 0;
-                    position: relative;
-                    background-color: transparent;
-                    text-decoration: none;
                 }
                 .avatar{
                     border-radius: 50%;
-                    width: 30px;
-                    height: 30px;
+                    width: 22px;
+                    height: 22px;
+                    margin-top: 4px;
                     float: left;
                 }
                 .exit{
@@ -54,15 +59,67 @@
                     float: left;
                     line-height: 15px;
                     padding: 0 12px;
-                    margin: 7px 0 0;
-                    position: relative;
-                    background-color: transparent;
-                    text-decoration: none;
+                    margin: 7px 0 0;    
                 }
             }
         }
     }	
     .nav{
-
+        min-width: 1200px;
+        height: 54px;
+        border-top: 1px solid #d2d2d2;
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #fafafa;
+        .inner{
+            width: 1200px;
+            margin: 0 auto;
+            .tnav_l{
+                float: left;
+                .suggestCity{
+                    width: 260px;
+                    float: left;
+                    height: 44px;
+                    padding-top: 4px;
+                    padding-left: 12px;
+                    font-size: 18px;
+                    line-height: 44px;
+                    strong{
+                        margin-right: 8px;
+                        color: #333;
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                    em{
+                        color: #999;
+                        font-size: 12px;
+                        cursor: pointer;
+                        font-style: normal;
+                    }
+                }
+                .tnav_wrap{
+                    float: left;
+                    li{
+                        display: inline-block;
+                        margin: 0 16px;
+                        position: relative;
+                        .current{
+                            color: #333;
+                            border-bottom: 2px solid #00b38a;
+                            display: block;
+                            font-size: 18px;
+                            line-height: 53px;
+                            padding: 0 5px;
+                        }
+                        .normal{
+                            color: #333;
+                            display: block;
+                            font-size: 18px;
+                            line-height: 53px;
+                            padding: 0 5px;
+                        }
+                    }
+                }
+            }
+        }
     }		    
 }
