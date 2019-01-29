@@ -83,6 +83,16 @@ class Header extends Component {
             this.setState({version:"jobSeeker",navData:jobSeekerData,entrance:enterpriseEnter})
         }
     }
+
+    renderFace(){
+        var f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
+        function loop() {
+            let face = f[Math.floor((Date.now()/100)%f.length)];
+            setTimeout(loop, 50);
+            return face
+        }
+        return loop();
+    }
  
     render () {
         const { pathname } = this.props.location
@@ -108,6 +118,7 @@ class Header extends Component {
                     <div className = { style.inner}>
                         <div className = { style.tnav_l}>
                             <div className = { style.suggestCity }>
+                                <span>{this.renderFace()}</span>
                                 <strong>上海站</strong>
                                 <em className = { style.changeCity_btn }>[切换城市]</em>
                             </div>
