@@ -103,6 +103,7 @@ class HomeView extends Component {
                 <div className = { style.containHeader}>
                     <div className = { style.searchWrapper }>
                         <Search placeholder="搜索职位" enterButton="搜索" className = { style.search_input} size="large" onSearch={value => console.log(value)}/>
+                        <a className = { style.button } href="https://codepen.io/ARS" target="_blank"><span>button</span></a>
                     </div>
                 </div>
                 <div className = { style.containerBody }>
