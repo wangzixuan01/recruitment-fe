@@ -88,6 +88,28 @@ const searchJobRes = [
     }
 ]
 
+const recommendList = [
+    {
+        "id":1088420747970359296,
+        "userId":9319120,
+        "companyId":62,
+        "salary":"15k-25k",
+        "experience":"经验5-10年",
+        "educationBackground":"本科",
+        "jobShortDesc":["前端","人工智能"],
+        "location":"上海",
+        "companyLogo":"//www.lgstatic.com/thumbnail_120x120/image1/M00/30/FF/CgYXBlWKUi2AIoAzAAAl6qNPOOw036.gif",
+        "companyShortName":"字节跳动",
+        "positionName":"前端开发实习生-核心广告系统",
+        "createTime":"20190124T205822+0800",
+        "createTimeStr":"2019-01-24 20:58:22",
+        "formatTime":"昨天",
+        "companyName":"北京字节跳动科技有限公司",
+        "positionId":5395192,
+        "companyClassify":"电子商务",
+        "companyShortDesc":["公平竞争", "发展空间大"]
+    },
+]
 class HomeView extends Component {
 
     constructor(props) {
@@ -164,6 +186,31 @@ class HomeView extends Component {
                         </Carousel>
                     </div>
                     <div className = { style.moduleTabs}>推荐职位</div>
+                    <div className = { style.job_list_rapper }>
+                        <ul className = { `${style.position_list_ul} ${style.clearfix}` }>
+                            {
+                                recommendList.map((item,index)=>{
+                                    return <li key = { "recommend"+index } className = { style.position_list_item }>
+                                        <div className = { style.pli_top }> 
+                                            <div className = { `${style.clearfix} ${style.pli_top_l}` }>
+                                                <div className = { style.position_name }>
+                                                    <h2 className = { `${style.dib} ${style.clearfix}` }>
+                                                        <a className = { style.position_link}>{ item.positionName}</a>
+                                                    </h2>
+                                                    <span className = { `${style.dib} ${style.createTime}` } ></span>
+                                                </div>
+                                                <span>{ item.jobShortDesc }</span>
+                                            </div>
+                                        </div>
+                                        <div className = { `${style.pli_btm} ${style.clearfix}` }>
+                                               
+                                        </div>
+                                    </li>
+
+                                })
+                            }
+                        </ul>
+                    </div>
                     <div className = { style.moduleTabs}>热门公司</div>
                 </div>
             </div>
