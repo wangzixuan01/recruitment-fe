@@ -9,12 +9,50 @@
 @size: 400%;
 @dur:  3s;
 
-.clearfix{
-    *zoom: 1;
+.clearfix { 
+    *zoom: 1; 
+} 
+.clearfix:before, .clearfix:after { 
+    display: table; 
+    line-height: 0; 
+    content: ""; 
+} 
+.clearfix:after { 
+    clear: both; 
 }
-.clearfix:before, .clearfix:after {
-    content: "";
-    display: table;
+   
+.list_more {
+    display: block;
+    width: 387px;
+    height: 42px;
+    line-height: 42px;
+    margin: 16px auto 0;
+    background: #FFF;
+    border: 1px solid #00B38A;
+    font-size: 16px;
+    color: #00b38a;
+    text-align: center;
+    -webkit-transition: background .3s,color .1s;
+    -moz-transition: background .3s,color .1s;
+    -ms-transition: background .3s,color .1s;
+    -o-transition: background .3s,color .1s;
+}
+.list_more:hover {
+    color: #fff;
+    background: #00B38A;
+}
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+    display: inline-block;
 }
 
 .clip-frame(@width, @height, @border) {
@@ -312,34 +350,117 @@
                     padding: 20px 18px 0;
                     border: 1px solid #EAEEED;
                     background-color: #fff;
+                    .wordCut{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        word-wrap: normal;
+                    }
                     .pli_top{
-                        .position_name{
-                            height: 22px;
-                            font-size: 0;
-                            max-width: 290px;
-                            float: left;
-                            .dib{
-                                display: inline-block;
-                                vertical-align: middle;
-                                font-size: 16px;
-                                padding: 0;
-                                margin: 0;
-                                color: #333;
-                                .position_link{
-                                    color: #333;
-                                    max-width: 145px;
-                                    text-overflow: ellipsis;
-                                    overflow: hidden;
-                                    white-space: nowrap;
-                                    word-wrap: normal;
-                                    float: left;
+                        .labels{
+                            margin-top: 5px;
+                            .pli_btm_l{
+                                margin-right: 20px;
+                                height: 30px;
+                                line-height: 30px;
+                                overflow: hidden;
+                                span{
+                                    display: inline-block;
+                                    width: 61px;
+                                    height: 26px;
+                                    padding: 0 5px;
+                                    font-size: 12px;
+                                    line-height: 26px;
+                                    color: #999;
+                                    border: 1px solid #F0F0F0;
+                                    border-radius: 3px;
+                                    text-align: center;
+                                }
+                                span+span {
+                                    margin-left: 6px;
                                 }
                             }
                         }
-
+                        .position_main_info{
+                            height: 30px;
+                            line-height: 30px;
+                            color: #777;
+                            span+span:before {
+                                content: ' / ';
+                            }
+                        }
+                        .pli_top_l{
+                            width: 100%;
+                            height: 30px;
+                            .salary{
+                                font-size: 16px;
+                                color: #fa6041;
+                            }
+                            .position_name{
+                                height: 22px;
+                                font-size: 0;
+                                max-width: 290px;
+                                h2{
+                                    font-size: 16px;
+                                    display: inline-block;
+                                    padding: 0;
+                                    margin: 0;
+                                    color: #333;
+                                    .position_link{
+                                        color: #333;
+                                        max-width: 145px;
+                                    }
+                                }
+                                .createTime{
+                                    color: #999;
+                                    font-size: 14px;
+                                }
+                                .dib{
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    .position_link{
+                                        color: #333;
+                                        max-width: 145px;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        word-wrap: normal;
+                                        float: left;
+                                    }
+                                }
+                            }
+                        }
                     }
                     .pli_btm{
-
+                        margin-top: 18px;
+                        padding-top: 18px;
+                        border-top: 1px dashed #E0E0E0;
+                        .companyLogo{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        .bottomRight{
+                            margin-left: 54px;
+                            .company_name{
+                                height: 20px;
+                                line-height: 20px;
+                                font-size: 14px;
+                                color: #333;
+                                a{
+                                    color: #555;
+                                    background-color: transparent;
+                                    text-decoration: none;
+                                }
+                            }
+                            .industry{
+                                height: 20px;
+                                line-height: 20px;
+                                color: #999;
+                                span+span:before {
+                                    content: ' / ';
+                                }
+                            }
+                        }
                     }
                 }
             }
