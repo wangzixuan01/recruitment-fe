@@ -279,6 +279,19 @@ const recommendList = [
         "financing":"未融资"
     },
 ]
+
+const hotCompany = [
+    {
+        "companyLogo":"https://www.lgstatic.com/thumbnail_160x160/i/image/M00/13/A5/CgqKkVbnxCOAbpbTAABF3QXQ2hc576.jpg",
+        "companyName":"车轮",
+        "companyClassify":"移动互联网",
+        "financing":"C轮",
+        "companyAd":"车轮，让有车生活更美好！",
+        "interviewAssessmentCount":66,
+        "positionsNum":4,
+        "ResumeProcessingPer":"100%"
+    }
+]
 class HomeView extends Component {
 
     constructor(props) {
@@ -405,6 +418,52 @@ class HomeView extends Component {
                         <a href="/" className={ style.list_more} >查看更多</a>
                     </div>
                     <div className = { style.moduleTabs}>热门公司</div> 
+                    <div className="ad-companys">
+                        <ul className="ad-company-list clearfix" >
+                        {
+                            hotCompany.map((item,index)=>{
+                                return <li className="company-item">
+                                <div className="top">
+                                    <p>
+                                        <a href="https://www.lagou.com/gongsi/34863.html" target="_blank" className="" data-lg-tj-id="19we" data-lg-tj-no="0001" data-lg-tj-cid="">
+                                            <img src="" alt="公司logo" width="80" height="80" />
+                                        </a>
+                                    </p>
+                                    <p className="company-name wordCut">
+                                        <a href="https://www.lagou.com/gongsi/34863.html" target="_blank" data-lg-tj-id="19wf" data-lg-tj-no="0001" data-lg-tj-cid="">车轮</a>
+                                    </p>
+                                    <p className="indus-stage wordCut">
+                                        <span>移动互联网</span>
+                                        <span>C轮</span>
+                                    </p>
+                                    <p className="advantage wordCut">车轮，让有车生活更美好！</p>
+                                </div>
+                                <div className="bottom clearfix">
+                                    <a className="bottom-item bottom-1 fl" href="https://www.lagou.com/gongsi/interviewExperiences.html?companyId=34863" target="_blank" >
+                                    <p className="green">
+                                        <span>69</span>
+                                    </p>
+                                    <p className="gray">面试评价</p>
+                                    </a>
+                                    <a className="bottom-item bottom-2 fl" href="https://www.lagou.com/gongsi/j34863.html" target="_blank" data-lg-tj-id="19wh" data-lg-tj-no="0001" data-lg-tj-cid="">
+                                        <p className="green">
+                                            <span>30</span>
+                                        </p>
+                                        <p className="gray">在招职位</p>
+                                    </a>
+                                    <a className="bottom-item bottom-3 fl" href="https://www.lagou.com/gongsi/34863.html" target="_blank" >
+                                        <p className="green">
+                                            <span>77%</span>
+                                        </p>
+                                        <p className="gray">简历处理率</p>
+                                    </a>
+                                </div>
+                            </li>
+                            })
+                        }
+                        </ul>
+                        <a href="https://www.lagou.com/gongsi/" class="list_more" target="_blank" >查看更多</a>
+                    </div>
                 </div>
             </div>
         )
