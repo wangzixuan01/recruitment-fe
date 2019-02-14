@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { connect } from 'dva'
 import { Input, Carousel } from 'antd';
+import JobListings from 'components/JobListings/JobListings'
+import CompanyList from 'components/CompanyList/CompanyList'
 import style from './home.less'
 
 const Search = Input.Search;
@@ -439,99 +441,12 @@ class HomeView extends Component {
                     </div>
                     <div className = { style.moduleTabs}>推荐职位</div>
                     <div className = { `${style.job_list_rapper}  ${style.clearfix}` }>
-                        <ul className = { `${style.position_list_ul} ${style.clearfix}` }>
-                            {
-                                recommendList.map((item,index)=>{
-                                    return <li key = { "listItem" +index} className={`${style.position_list_item}`}>
-                                    <div className={style.pli_top}>
-                                        <div className={`${style.clearfix} ${style.pli_top_l}`}>
-                                            <div className={`${style.position_name} ${style.fl}`}>
-                                                <h2 className={style.dib}>
-                                                    <a href="https://www.lagou.com/jobs/5525272.html" target="_blank" className={`${style.position_link} ${style.fl} ${style.wordCut}`}>{item.positionName}</a>
-                                                </h2>
-                                                <span className={`${style.dib} ${style.createTime}`}> [{item.formatTime}] </span>
-                                            </div>
-                                            <span className={`${style.salary} ${style.fr}`}>{item.salary}</span>
-                                        </div>
-                                        <div className={`${style.position_main_info} ${style.wordCut}`}>
-                                            <span>{item.experience}</span>
-                                            <span>{item.educationBackground}</span>
-                                        </div>
-                                        <div className={style.labels}>
-                                            <div className={style.pli_btm_l}>
-                                            {
-                                                item.companyShortDesc.map((shortDesc,idx)=>{
-                                                    return <span key = { "word" + idx } className={style.wordCut} >{shortDesc}</span>
-                                                })
-                                            }
-                                            </div>
-                                        </div>
-                                        <div className={`${style.pli_btm} ${style.clearfix}`}>
-                                        <a href="https://www.lagou.com/gongsi/57382.html" className={style.fl} target="_blank" >
-                                           <img src={item.companyLogo} alt="公司logo" className={style.companyLogo} />
-                                        </a>
-                                        <div className={style.bottomRight}>
-                                            <div className={`${style.company_name} ${style.wordCut}`}>
-                                                <a href="https://www.lagou.com/gongsi/57382.html" target="_blank" >元笛</a>
-                                            </div>
-                                            <div className={`${style.industry} ${style.wordCut}`}>
-                                                <span>{item.companyClassify}</span>
-                                                <span>{item.financing}</span>
-                                                <span>{item.location}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </li>})
-                            }
-                        </ul>
+                        <JobListings jobList={ recommendList }/>
                         <a href="/" className={ style.list_more} >查看更多</a>
                     </div>
                     <div className = { style.moduleTabs}>热门公司</div> 
                     <div className={style.adCompanys}>
-                        <ul className={`${style.adCompanyList} ${style.clearfix}`} >
-                        {
-                            hotCompany.map((item,index)=>{
-                                return <li key={ "hotCopany" + index} className={style.companyItem}>
-                                <div className={style.top}>
-                                    <p>
-                                        <a href="https://www.lagou.com/gongsi/34863.html" target="_blank" className="" >
-                                            <img src={item.companyLogo} alt="公司logo"/>
-                                        </a>
-                                    </p>
-                                    <p className={`${style.companyName} ${style.wordCut}`}>
-                                        <a href="https://www.lagou.com/gongsi/34863.html" target="_blank" >{item.companyName}</a>
-                                    </p>
-                                    <p className={`${style.indusStage} ${style.wordCut}`}>
-                                        <span>{item.companyClassify}</span>
-                                        <span>{item.financing}</span>
-                                    </p>
-                                    <p className={`${style.advantage} ${style.wordCut}`}>{item.companyAd}</p>
-                                </div>
-                                <div className={`${style.bottom} ${style.clearfix}`}>
-                                    <a className={`${style.bottomItem} ${style.bottom1} ${style.fl}`} href="https://www.lagou.com/gongsi/interviewExperiences.html?companyId=34863" target="_blank" >
-                                    <p className={style.green}>
-                                        <span>{item.interviewAssessmentCount}</span>
-                                    </p>
-                                    <p className={style.gray}>面试评价</p>
-                                    </a>
-                                    <a className={`${style.bottomItem} ${style.bottom2} ${style.fl}`} href="https://www.lagou.com/gongsi/j34863.html" target="_blank" data-lg-tj-id="19wh" data-lg-tj-no="0001" data-lg-tj-cid="">
-                                        <p className={style.green}>
-                                            <span>{item.positionsNum}</span>
-                                        </p>
-                                        <p className={style.gray}>在招职位</p>
-                                    </a>
-                                    <a className={`${style.bottomItem} ${style.bottom3} ${style.fl}`} href="https://www.lagou.com/gongsi/34863.html" target="_blank" >
-                                        <p className={style.green}>
-                                            <span>{item.ResumeProcessingPer}</span>
-                                        </p>
-                                        <p className={style.gray}>简历处理率</p>
-                                    </a>
-                                </div>
-                            </li>
-                            })
-                        }
-                        </ul>
+                        <CompanyList companyList={ hotCompany }/>
                         <a href="https://www.lagou.com/gongsi/" className={style.list_more} target="_blank" >查看更多</a>
                     </div>
                 </div>
