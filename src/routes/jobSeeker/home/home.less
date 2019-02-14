@@ -55,6 +55,12 @@ img {
     display: inline-block;
 }
 
+a{
+    color: #555;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 .clip-frame(@width, @height, @border) {
 -webkit-clip-path: polygon(0% 100%, @border 100%, @border @border, @width - @border @border, @width - @border @height - @border, @border @height - @border, @border 100%, 100% 100%, 100% 0%, 0% 0%);
 }
@@ -460,6 +466,111 @@ img {
                                     content: ' / ';
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        .adCompanys{
+            width: inherit;
+            .adCompanyList{
+                width: 1216px;
+                .companyItem{
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    float: left;
+                    width: 288px;
+                    height: 270px;
+                    margin-top: 16px;
+                    margin-right: 16px;
+                    border: 1px solid #EEE;
+                    .top{
+                        margin: 0 13px;
+                        padding: 20px 0 14px;
+                        text-align: center;
+                        border-bottom: 1px dashed #E0E0E0;
+                        img{
+                            width: 80px;
+                            height: 80px;
+                        }
+                        p{
+                            line-height: 22px;
+                            margin-bottom: 0px;
+                        }
+                        .companyName{
+                            height: 22px;
+                            margin-top: 13px;
+                            font-size: 16px;
+                            color: #333;
+                            a{
+                                color: #333;
+                            }
+                        }
+                        .indusStage{
+                            height: 22px;
+                            margin-top: 3px;
+                            color: #999;
+                            span+span:before {
+                                content: ' / ';
+                            }
+                        }
+                        .advantage{
+                            margin-top: 5px;
+                            color: #555;
+                        }
+                    }
+                    .wordCut{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        word-wrap: normal;
+                    }
+                    .bottom{
+                        .bottomItem{
+                            position: relative;
+                            display: block;
+                            margin-top: 17px;
+                            text-align: center;
+                            p{
+                                line-height: 1;
+                            }
+                            .gray{
+                                margin-top: 4px;
+                                font-size: 12px;
+                                color: #999;
+                            }
+                            .green{
+                                color: #00b38a;
+                            }
+                        }
+                        .bottom1{
+                            width: 90px;
+                            ::after{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                content: "";
+                                height: 30px;
+                                width: 1px;
+                                background: #EDEDED;
+                            }
+                        }
+                        .bottom2{
+                            width: 90px;
+                            ::after{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                content: "";
+                                height: 30px;
+                                width: 1px;
+                                background: #EDEDED;
+                            }
+                        }
+                        .bottom3{
+                            width: 104px;
+                            border-right: 0;
                         }
                     }
                 }
