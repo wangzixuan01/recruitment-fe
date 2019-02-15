@@ -21,7 +21,33 @@ class MyResume extends Component {
     render() {
         return (
             <div style = { container }>
-                测试myResume
+                <div className={`${style.container} ${style.clearfix}`}>
+                    <div className={`${style.clearfixs} ${style.mrWrapper}`}>
+                        <div className={style.myresume}>
+                            <div className={style.basic}>
+                                <div className={style.basicPhoto}>
+                                    <img src={"SSSS"} className={`${style.mr_headimg} ${style.userAvatar}`}/>
+                                </div>
+                                <div className={style.basicInfo}>
+                                    <em className={`${style.editBtn} ${style.basicInfo__edit}`}>
+                                        <i className={`${style.iconIcon_resume_editor} ${style.activeColor}`}></i>
+                                        编辑
+                                    </em>
+                                    <div className={style.basicNameArea}>
+                                        <p className={`${style.basicName} ${style.female}`}></p>
+                                        <i className={`${style.iconSex} ${style.iconSex__male}`}></i>
+                                    </div>
+                                    <div className={style.basicSelf}>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
